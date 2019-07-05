@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		6D3B39CD228B59DC00846BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */; };
-		6D3B39CF228B59DC00846BC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39CE228B59DC00846BC2 /* ViewController.swift */; };
+		6D3B39CF228B59DC00846BC2 /* ObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */; };
 		6D3B39D2228B59DC00846BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B39D0228B59DC00846BC2 /* Main.storyboard */; };
 		6D3B39D4228B59E800846BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B39D3228B59E800846BC2 /* Assets.xcassets */; };
 		6D3B39D7228B59E800846BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B39D5228B59E800846BC2 /* LaunchScreen.storyboard */; };
-		6D3B39E2228B59E900846BC2 /* RxLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39E1228B59E900846BC2 /* RxLightTests.swift */; };
-		6D3B39ED228B59E900846BC2 /* RxLightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39EC228B59E900846BC2 /* RxLightUITests.swift */; };
+		6D3B39E2228B59E900846BC2 /* ControlObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39E1228B59E900846BC2 /* ControlObserverTests.swift */; };
+		6D3B39ED228B59E900846BC2 /* ObservationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39EC228B59E900846BC2 /* ObservationsUITests.swift */; };
+		6D3B39FC228B5A3200846BC2 /* Observing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39FB228B5A3200846BC2 /* Observing.swift */; };
+		6D3B39FE228B5A6000846BC2 /* ObservableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39FD228B5A6000846BC2 /* ObservableButton.swift */; };
+		6D3B3A02228CE71400846BC2 /* ObservingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B3A01228CE71400846BC2 /* ObservingViewController.swift */; };
+		6D83CAEC229D341A00506884 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83CAEB229D341A00506884 /* ControlObserver.swift */; };
+		6D83CAEE229D343700506884 /* ObservableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83CAED229D343700506884 /* ObservableSlider.swift */; };
+		6DC6441722A1050F00E27114 /* ObservingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6441622A1050F00E27114 /* ObservingTests.swift */; };
+		6DC6441922A3940700E27114 /* ObservableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6441822A3940700E27114 /* ObservableControl.swift */; };
+		6DC6441B22A3966F00E27114 /* OptionSetIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6441A22A3966F00E27114 /* OptionSetIterator.swift */; };
+		6DC6441D22A397A800E27114 /* OptionSetIteratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6441C22A397A700E27114 /* OptionSetIteratorTests.swift */; };
+		6DC6442122A4565100E27114 /* ObservableSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC6442022A4565100E27114 /* ObservableSliderTests.swift */; };
+		6DF6F484229031F900BC7F6E /* ObservableButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6F483229031F900BC7F6E /* ObservableButtonTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +45,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D3B39C9228B59DC00846BC2 /* RxLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3B39C9228B59DC00846BC2 /* Observations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Observations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6D3B39CE228B59DC00846BC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewController.swift; sourceTree = "<group>"; };
 		6D3B39D1228B59DC00846BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D3B39D3228B59E800846BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D3B39D6228B59E800846BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D3B39D8228B59E800846BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D3B39DD228B59E900846BC2 /* RxLightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxLightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D3B39E1228B59E900846BC2 /* RxLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLightTests.swift; sourceTree = "<group>"; };
+		6D3B39DD228B59E900846BC2 /* ObservationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObservationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3B39E1228B59E900846BC2 /* ControlObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlObserverTests.swift; sourceTree = "<group>"; };
 		6D3B39E3228B59E900846BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D3B39E8228B59E900846BC2 /* RxLightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxLightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D3B39EC228B59E900846BC2 /* RxLightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLightUITests.swift; sourceTree = "<group>"; };
+		6D3B39E8228B59E900846BC2 /* ObservationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObservationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3B39EC228B59E900846BC2 /* ObservationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationsUITests.swift; sourceTree = "<group>"; };
 		6D3B39EE228B59E900846BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3B39FB228B5A3200846BC2 /* Observing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observing.swift; sourceTree = "<group>"; };
+		6D3B39FD228B5A6000846BC2 /* ObservableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableButton.swift; sourceTree = "<group>"; };
+		6D3B3A01228CE71400846BC2 /* ObservingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingViewController.swift; sourceTree = "<group>"; };
+		6D83CAEB229D341A00506884 /* ControlObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserver.swift; sourceTree = "<group>"; };
+		6D83CAED229D343700506884 /* ObservableSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableSlider.swift; sourceTree = "<group>"; };
+		6DC6441622A1050F00E27114 /* ObservingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingTests.swift; sourceTree = "<group>"; };
+		6DC6441822A3940700E27114 /* ObservableControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableControl.swift; sourceTree = "<group>"; };
+		6DC6441A22A3966F00E27114 /* OptionSetIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSetIterator.swift; sourceTree = "<group>"; };
+		6DC6441C22A397A700E27114 /* OptionSetIteratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSetIteratorTests.swift; sourceTree = "<group>"; };
+		6DC6442022A4565100E27114 /* ObservableSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableSliderTests.swift; sourceTree = "<group>"; };
+		6DF6F483229031F900BC7F6E /* ObservableButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableButtonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +99,9 @@
 		6D3B39C0228B59DC00846BC2 = {
 			isa = PBXGroup;
 			children = (
-				6D3B39CB228B59DC00846BC2 /* RxLight */,
-				6D3B39E0228B59E900846BC2 /* RxLightTests */,
-				6D3B39EB228B59E900846BC2 /* RxLightUITests */,
+				6D3B39CB228B59DC00846BC2 /* Sources */,
+				6D3B39E0228B59E900846BC2 /* ObservationsTests */,
+				6D3B39EB228B59E900846BC2 /* ObservationsUITests */,
 				6D3B39CA228B59DC00846BC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,50 +109,77 @@
 		6D3B39CA228B59DC00846BC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D3B39C9228B59DC00846BC2 /* RxLight.app */,
-				6D3B39DD228B59E900846BC2 /* RxLightTests.xctest */,
-				6D3B39E8228B59E900846BC2 /* RxLightUITests.xctest */,
+				6D3B39C9228B59DC00846BC2 /* Observations.app */,
+				6D3B39DD228B59E900846BC2 /* ObservationsTests.xctest */,
+				6D3B39E8228B59E900846BC2 /* ObservationsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D3B39CB228B59DC00846BC2 /* RxLight */ = {
+		6D3B39CB228B59DC00846BC2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6D3B39FA228B5A1A00846BC2 /* Observing */,
 				6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */,
-				6D3B39CE228B59DC00846BC2 /* ViewController.swift */,
+				6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */,
+				6D3B3A01228CE71400846BC2 /* ObservingViewController.swift */,
 				6D3B39D0228B59DC00846BC2 /* Main.storyboard */,
 				6D3B39D3228B59E800846BC2 /* Assets.xcassets */,
 				6D3B39D5228B59E800846BC2 /* LaunchScreen.storyboard */,
 				6D3B39D8228B59E800846BC2 /* Info.plist */,
 			);
-			path = RxLight;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		6D3B39E0228B59E900846BC2 /* RxLightTests */ = {
+		6D3B39E0228B59E900846BC2 /* ObservationsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6D3B39E1228B59E900846BC2 /* RxLightTests.swift */,
+				6D3B39E1228B59E900846BC2 /* ControlObserverTests.swift */,
+				6DC6441622A1050F00E27114 /* ObservingTests.swift */,
+				6DF6F483229031F900BC7F6E /* ObservableButtonTests.swift */,
+				6DC6442022A4565100E27114 /* ObservableSliderTests.swift */,
+				6DC6441C22A397A700E27114 /* OptionSetIteratorTests.swift */,
 				6D3B39E3228B59E900846BC2 /* Info.plist */,
 			);
-			path = RxLightTests;
+			path = ObservationsTests;
 			sourceTree = "<group>";
 		};
-		6D3B39EB228B59E900846BC2 /* RxLightUITests */ = {
+		6D3B39EB228B59E900846BC2 /* ObservationsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6D3B39EC228B59E900846BC2 /* RxLightUITests.swift */,
+				6D3B39EC228B59E900846BC2 /* ObservationsUITests.swift */,
 				6D3B39EE228B59E900846BC2 /* Info.plist */,
 			);
-			path = RxLightUITests;
+			path = ObservationsUITests;
+			sourceTree = "<group>";
+		};
+		6D3B39FA228B5A1A00846BC2 /* Observing */ = {
+			isa = PBXGroup;
+			children = (
+				6D83CAEF229D343F00506884 /* Controls */,
+				6D3B39FB228B5A3200846BC2 /* Observing.swift */,
+			);
+			path = Observing;
+			sourceTree = "<group>";
+		};
+		6D83CAEF229D343F00506884 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				6D83CAEB229D341A00506884 /* ControlObserver.swift */,
+				6DC6441822A3940700E27114 /* ObservableControl.swift */,
+				6D3B39FD228B5A6000846BC2 /* ObservableButton.swift */,
+				6D83CAED229D343700506884 /* ObservableSlider.swift */,
+				6DC6441A22A3966F00E27114 /* OptionSetIterator.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D3B39C8228B59DC00846BC2 /* RxLight */ = {
+		6D3B39C8228B59DC00846BC2 /* Observations */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D3B39F1228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLight" */;
+			buildConfigurationList = 6D3B39F1228B59E900846BC2 /* Build configuration list for PBXNativeTarget "Observations" */;
 			buildPhases = (
 				6D3B39C5228B59DC00846BC2 /* Sources */,
 				6D3B39C6228B59DC00846BC2 /* Frameworks */,
@@ -140,14 +189,14 @@
 			);
 			dependencies = (
 			);
-			name = RxLight;
+			name = Observations;
 			productName = RxLight;
-			productReference = 6D3B39C9228B59DC00846BC2 /* RxLight.app */;
+			productReference = 6D3B39C9228B59DC00846BC2 /* Observations.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D3B39DC228B59E900846BC2 /* RxLightTests */ = {
+		6D3B39DC228B59E900846BC2 /* ObservationsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D3B39F4228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLightTests" */;
+			buildConfigurationList = 6D3B39F4228B59E900846BC2 /* Build configuration list for PBXNativeTarget "ObservationsTests" */;
 			buildPhases = (
 				6D3B39D9228B59E900846BC2 /* Sources */,
 				6D3B39DA228B59E900846BC2 /* Frameworks */,
@@ -158,14 +207,14 @@
 			dependencies = (
 				6D3B39DF228B59E900846BC2 /* PBXTargetDependency */,
 			);
-			name = RxLightTests;
+			name = ObservationsTests;
 			productName = RxLightTests;
-			productReference = 6D3B39DD228B59E900846BC2 /* RxLightTests.xctest */;
+			productReference = 6D3B39DD228B59E900846BC2 /* ObservationsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6D3B39E7228B59E900846BC2 /* RxLightUITests */ = {
+		6D3B39E7228B59E900846BC2 /* ObservationsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D3B39F7228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLightUITests" */;
+			buildConfigurationList = 6D3B39F7228B59E900846BC2 /* Build configuration list for PBXNativeTarget "ObservationsUITests" */;
 			buildPhases = (
 				6D3B39E4228B59E900846BC2 /* Sources */,
 				6D3B39E5228B59E900846BC2 /* Frameworks */,
@@ -176,9 +225,9 @@
 			dependencies = (
 				6D3B39EA228B59E900846BC2 /* PBXTargetDependency */,
 			);
-			name = RxLightUITests;
+			name = ObservationsUITests;
 			productName = RxLightUITests;
-			productReference = 6D3B39E8228B59E900846BC2 /* RxLightUITests.xctest */;
+			productReference = 6D3B39E8228B59E900846BC2 /* ObservationsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D3B39C4228B59DC00846BC2 /* Build configuration list for PBXProject "RxLight" */;
+			buildConfigurationList = 6D3B39C4228B59DC00846BC2 /* Build configuration list for PBXProject "Observations" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,9 +266,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D3B39C8228B59DC00846BC2 /* RxLight */,
-				6D3B39DC228B59E900846BC2 /* RxLightTests */,
-				6D3B39E7228B59E900846BC2 /* RxLightUITests */,
+				6D3B39C8228B59DC00846BC2 /* Observations */,
+				6D3B39DC228B59E900846BC2 /* ObservationsTests */,
+				6D3B39E7228B59E900846BC2 /* ObservationsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,7 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3B39CF228B59DC00846BC2 /* ViewController.swift in Sources */,
+				6DC6441922A3940700E27114 /* ObservableControl.swift in Sources */,
+				6D3B39CF228B59DC00846BC2 /* ObservableViewController.swift in Sources */,
+				6D83CAEE229D343700506884 /* ObservableSlider.swift in Sources */,
+				6D83CAEC229D341A00506884 /* ControlObserver.swift in Sources */,
+				6D3B39FC228B5A3200846BC2 /* Observing.swift in Sources */,
+				6D3B3A02228CE71400846BC2 /* ObservingViewController.swift in Sources */,
+				6DC6441B22A3966F00E27114 /* OptionSetIterator.swift in Sources */,
+				6D3B39FE228B5A6000846BC2 /* ObservableButton.swift in Sources */,
 				6D3B39CD228B59DC00846BC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3B39E2228B59E900846BC2 /* RxLightTests.swift in Sources */,
+				6DC6442122A4565100E27114 /* ObservableSliderTests.swift in Sources */,
+				6DC6441722A1050F00E27114 /* ObservingTests.swift in Sources */,
+				6DC6441D22A397A800E27114 /* OptionSetIteratorTests.swift in Sources */,
+				6DF6F484229031F900BC7F6E /* ObservableButtonTests.swift in Sources */,
+				6D3B39E2228B59E900846BC2 /* ControlObserverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3B39ED228B59E900846BC2 /* RxLightUITests.swift in Sources */,
+				6D3B39ED228B59E900846BC2 /* ObservationsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +342,12 @@
 /* Begin PBXTargetDependency section */
 		6D3B39DF228B59E900846BC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D3B39C8228B59DC00846BC2 /* RxLight */;
+			target = 6D3B39C8228B59DC00846BC2 /* Observations */;
 			targetProxy = 6D3B39DE228B59E900846BC2 /* PBXContainerItemProxy */;
 		};
 		6D3B39EA228B59E900846BC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D3B39C8228B59DC00846BC2 /* RxLight */;
+			target = 6D3B39C8228B59DC00846BC2 /* Observations */;
 			targetProxy = 6D3B39E9228B59E900846BC2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -434,12 +494,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLight/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.Observations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,12 +512,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLight/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.Observations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,17 +531,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLightTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObservationsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLightTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.ObservationsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxLight.app/RxLight";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observations.app/Observations";
 			};
 			name = Debug;
 		};
@@ -492,17 +552,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLightTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObservationsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLightTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.ObservationsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxLight.app/RxLight";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Observations.app/Observations";
 			};
 			name = Release;
 		};
@@ -512,17 +572,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLightUITests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObservationsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLightUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.ObsservationsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RxLight;
+				TEST_TARGET_NAME = Observations;
 			};
 			name = Debug;
 		};
@@ -532,24 +593,25 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = RxLightUITests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ObservationsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.RxLightUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SintraWorks.ObsservationsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RxLight;
+				TEST_TARGET_NAME = Observations;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D3B39C4228B59DC00846BC2 /* Build configuration list for PBXProject "RxLight" */ = {
+		6D3B39C4228B59DC00846BC2 /* Build configuration list for PBXProject "Observations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3B39EF228B59E900846BC2 /* Debug */,
@@ -558,7 +620,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D3B39F1228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLight" */ = {
+		6D3B39F1228B59E900846BC2 /* Build configuration list for PBXNativeTarget "Observations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3B39F2228B59E900846BC2 /* Debug */,
@@ -567,7 +629,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D3B39F4228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLightTests" */ = {
+		6D3B39F4228B59E900846BC2 /* Build configuration list for PBXNativeTarget "ObservationsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3B39F5228B59E900846BC2 /* Debug */,
@@ -576,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D3B39F7228B59E900846BC2 /* Build configuration list for PBXNativeTarget "RxLightUITests" */ = {
+		6D3B39F7228B59E900846BC2 /* Build configuration list for PBXNativeTarget "ObservationsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D3B39F8228B59E900846BC2 /* Debug */,
