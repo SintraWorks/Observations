@@ -38,7 +38,6 @@ class ObservableViewController: UIViewController, Observable {
 	let button1 = ObservableButton(type: .custom)
 	let button2 = ObservableButton(type: .custom)
 	let slider = ObservableSlider(frame: .zero)
-	let swipeTarget = UILabel()
 	var label = UILabel()
     var numberOfActions: Int = 0
 
@@ -86,15 +85,12 @@ class ObservableViewController: UIViewController, Observable {
 		button1.translatesAutoresizingMaskIntoConstraints = false
 		button2.translatesAutoresizingMaskIntoConstraints = false
 		label.translatesAutoresizingMaskIntoConstraints = false
-		swipeTarget.translatesAutoresizingMaskIntoConstraints = false
-//		swipeTarget.alpha = 0
 
 		slider.translatesAutoresizingMaskIntoConstraints = false
 
 		view.addSubview(self.button1)
 		view.addSubview(self.button2)
 		view.addSubview(self.label)
-		view.addSubview(self.swipeTarget)
 		view.addSubview(slider)
 
 		NSLayoutConstraint.activate([
@@ -106,8 +102,6 @@ class ObservableViewController: UIViewController, Observable {
 			label.topAnchor.constraint(equalTo: button2.bottomAnchor, constant: 8),
 			button1.widthAnchor.constraint(equalToConstant: 100),
 			button2.widthAnchor.constraint(equalToConstant: 100),
-			swipeTarget.leftAnchor.constraint(equalTo: view.leftAnchor),
-			swipeTarget.centerYAnchor.constraint(equalTo: view.centerYAnchor),
 			slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			slider.widthAnchor.constraint(equalToConstant: 200.0),
 			slider.topAnchor.constraint(equalTo: button2.bottomAnchor, constant: 32)
