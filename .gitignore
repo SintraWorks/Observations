@@ -1,0 +1,6 @@
+# OS X ignorable files
+.DS_Store
+
+## User settings
+xcuserdata/
+
