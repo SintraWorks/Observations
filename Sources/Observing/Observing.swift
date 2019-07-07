@@ -23,50 +23,50 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-/// An object that can observe instances of `Observed`.
-final class Observer<Observed> {
-	let handler: (Observed) -> Void
+/// An object that can observe instances of `Observation`.
+final class Observer<Observation> {
+	let handler: (Observation) -> Void
 
-	func observe(_ thing: Observed) {
+	func observe(_ thing: Observation) {
 		handler(thing)
 	}
 
-	init(handler: @escaping (Observed) -> Void) {
+	init(handler: @escaping (Observation) -> Void) {
 		self.handler = handler
 	}
 }
 
-/// A protocol for observables that can hold a single `Observer`.
+/// A protocol for observables that can service a single `Observer`.
 protocol Observable {
-	associatedtype Observed
-	var observer: Observer<Observed>? { get set }
+	associatedtype Observation
+	var observer: Observer<Observation>? { get set }
 }
 
-/// A protocol for observables that can hold multiple `Observer`s.
+/// A protocol for observables that can service multiple `Observer`s.
 protocol MultiObservable {
-	associatedtype Observed
-	var observers: [Observer<Observed>] { get set }
+	associatedtype Observation
+	var observers: [Observer<Observation>] { get set }
 }
 
 extension MultiObservable {
 	/// Add an observer by passing in a handler for the observation.
-	/// - Parameter handler: A function that takes an instance of the observed type.
-	/// - Returns: The created observer.
-	@discardableResult mutating func addObserver(for handler: @escaping (Observed) -> Void) -> Observer<Observed> {
-		let observer = Observer<Observed>(handler: handler)
+	/// - Parameter handler: A function that takes an Observation.
+	/// - Returns: The newly created observer.
+	@discardableResult mutating func addObserver(for handler: @escaping (Observation) -> Void) -> Observer<Observation> {
+		let observer = Observer<Observation>(handler: handler)
 		observers.append(observer)
 		return observer
 	}
 
 	/// Add an observer.
 	/// - Parameter observer: An Observer.
-	mutating func add(observer: Observer<Observed>) {
+	mutating func add(observer: Observer<Observation>) {
 		observers.append(observer)
 	}
 
 	/// Remove all instances of a specific observer.
 	/// - Parameter observer: An Observer.
-	mutating func remove(observer: Observer<Observed>) {
+	mutating func remove(observer: Observer<Observation>) {
 		observers.removeAll { $0 === observer }
 	}
 
@@ -76,8 +76,8 @@ extension MultiObservable {
 	}
 
 	/// Send something observable to all observers.
-	/// - Parameter observation: An instance of that which can be `Observed`.
-	func notifyObservers(of observation: Observed) {
+	/// - Parameter observation: An Observation.
+	func notifyObservers(of observation: Observation) {
 		for observer in observers {
 			observer.observe(observation)
 		}

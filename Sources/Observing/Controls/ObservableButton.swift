@@ -27,9 +27,9 @@
 import UIKit
 
 final class ObservableButton: UIButton, ObservableControl {
-    typealias Observed = Void
+    typealias Observation = Void
 
-    lazy internal var controlObserver = ControlObserver<Observed>(with: self)
+    lazy internal var controlObserver = ControlObserver<Observation>(with: self)
 
     override func sendActions(for controlEvents: UIControl.Event) {
 		for event in controlEvents {

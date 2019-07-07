@@ -25,12 +25,12 @@
 
 import UIKit
 
-final internal class ControlObserver<Observed>: NSObject {
+final internal class ControlObserver<Observation>: NSObject {
     internal class EventObserver {
-        let observer: Observer<Observed>
+        let observer: Observer<Observation>
         var controlEvents: UIControl.Event
 
-        init(observer: Observer<Observed>, controlEvents: UIControl.Event) {
+        init(observer: Observer<Observation>, controlEvents: UIControl.Event) {
             self.observer = observer
             self.controlEvents = controlEvents
         }
@@ -49,7 +49,7 @@ final internal class ControlObserver<Observed>: NSObject {
 // MARK: Observer management
 
 extension ControlObserver {
-    internal func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observed) -> Void) {
+    internal func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observation) -> Void) {
 		guard let control = control else { return }
         let eventsAndSelectors = bridge.selectors(for: controlEvents)
 
@@ -57,7 +57,7 @@ extension ControlObserver {
             control.addTarget(bridge, action: selector, for: controlEvent)
         }
 
-        let eventObserver = EventObserver(observer: Observer<Observed>(handler: handler), controlEvents: controlEvents)
+        let eventObserver = EventObserver(observer: Observer<Observation>(handler: handler), controlEvents: controlEvents)
         eventObservers.append(eventObserver)
     }
 
@@ -81,12 +81,12 @@ extension ControlObserver {
         control?.removeTarget(bridge, action: nil, for: controlEvents)
     }
 
-    internal var observers: [Observer<Observed>] {
+    internal var observers: [Observer<Observation>] {
         return eventObservers.map({ $0.observer })
     }
 
-    internal func observers(for controlEvents: UIControl.Event) -> [Observer<Observed>] {
-        var observers = [Observer<Observed>]()
+    internal func observers(for controlEvents: UIControl.Event) -> [Observer<Observation>] {
+        var observers = [Observer<Observation>]()
 
         for event in controlEvents {
             let filteredObservers = eventObservers.filter({ $0.controlEvents.contains(event) }).map({ $0.observer })

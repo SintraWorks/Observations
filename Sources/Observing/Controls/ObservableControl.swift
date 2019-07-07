@@ -26,22 +26,22 @@
 import UIKit
 
 protocol ObservableControl {
-    associatedtype Observed
+    associatedtype Observation
 
-    var controlObserver: ControlObserver<Observed> { get }
+    var controlObserver: ControlObserver<Observation> { get }
 
-    func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observed) -> Void)
+    func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observation) -> Void)
     func removeObservers(for controlEvents: UIControl.Event)
 
     func sendActions(for controlEvents: UIControl.Event)
 
     func actions(for controlEvents: UIControl.Event) -> [String]?
-    func observers(for controlEvents: UIControl.Event) -> [Observer<Observed>]
-    var observers: [Observer<Observed>] { get }
+    func observers(for controlEvents: UIControl.Event) -> [Observer<Observation>]
+    var observers: [Observer<Observation>] { get }
 }
 
 extension ObservableControl {
-    func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observed) -> Void) {
+    func addObserver(for controlEvents: UIControl.Event, handler: @escaping (Observation) -> Void) {
         controlObserver.addObserver(for: controlEvents, handler: handler)
     }
 
@@ -49,11 +49,11 @@ extension ObservableControl {
         controlObserver.removeObservers(for: controlEvents)
     }
 
-    func observers(for controlEvents: UIControl.Event) -> [Observer<Observed>] {
+    func observers(for controlEvents: UIControl.Event) -> [Observer<Observation>] {
         return controlObserver.observers(for: controlEvents)
     }
 
-    var observers: [Observer<Observed>] {
+    var observers: [Observer<Observation>] {
         return controlObserver.observers
     }
 

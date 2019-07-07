@@ -31,9 +31,9 @@ final class ObservableSlider: UISlider, ObservableControl {
         case valueChanged(_ value: Float)
     }
 
-	typealias Observed = Action
+	typealias Observation = Action
 
-    lazy var controlObserver = ControlObserver<Observed>(with: self)
+    lazy var controlObserver = ControlObserver<Observation>(with: self)
 
     override func sendActions(for controlEvents: UIControl.Event) {
         for event in controlEvents {

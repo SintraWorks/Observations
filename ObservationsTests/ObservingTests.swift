@@ -63,8 +63,8 @@ class ObservingTests: XCTestCase {
 
 	func testMultiObservable() {
 		class MultiObservableTester: MultiObservable {
-			typealias Observed = Void
-			var observers: [Observer<Void>] = []
+			typealias Observation = Void
+			var observers: [Observer<Observation>] = []
 		}
 
 		var calledCount = 0

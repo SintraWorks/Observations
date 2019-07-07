@@ -33,7 +33,7 @@ class ObservableViewController: UIViewController, Observable {
 		case isTrackingSlider(flag: Bool)
 	}
 
-    typealias Observed = Action
+    typealias Observation = Action
     
 	let button1 = ObservableButton(type: .custom)
 	let button2 = ObservableButton(type: .custom)
@@ -41,7 +41,7 @@ class ObservableViewController: UIViewController, Observable {
 	var label = UILabel()
     var numberOfActions: Int = 0
 
-	var observer: Observer<Observed>?
+	var observer: Observer<Observation>?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
