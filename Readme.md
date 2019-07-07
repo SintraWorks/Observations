@@ -34,4 +34,4 @@ To create an observer for the observable:
                 }
             }
 
-For more info, see [this blog post](https://sintraworks.github.io/swift/2019/07/07/observables-2.html).
+For more info, see [this blog post](https://sintraworks.github.io/swift/2019/07/07/observables-1.html).
