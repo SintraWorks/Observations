@@ -244,8 +244,4 @@ extension ObjCSelectorBridge {
 
 // MARK: - Iterating over UIControl.Event
 
-extension UIControl.Event: Sequence {
-    public __consuming func makeIterator() -> OptionSetIterator<UIControl.Event> {
-        return OptionSetIterator(element: self)
-    }
-}
+extension UIControl.Event: Sequence {}

@@ -26,7 +26,76 @@
 import XCTest
 
 class OptionSetIteratorTests: XCTestCase {
-    func testIterator() {
+
+	func testIteratorTestSet() {
+		struct TestSet: OptionSet, Sequence {
+			let rawValue: UInt
+
+			static let optionA = Self(rawValue: 1 << 0)
+			static let optionB = Self(rawValue: 1 << 1)
+			static let optionC = Self(rawValue: 1 << 2)
+			static let optionD = Self(rawValue: 1 << 3)
+		}
+
+		let testSetEmpty: TestSet = []
+		let testSetA: TestSet = [.optionA]
+		let testSetAB: TestSet = [.optionA, .optionB]
+		let testSetABD: TestSet = [.optionD, .optionA, .optionB]
+		let testSetAll: TestSet = [.optionA, .optionB, .optionC, .optionD]
+		let testSetDuplicate: TestSet = [.optionA, .optionA]
+
+		var counter = 0
+		for _ in testSetEmpty {
+			counter += 1
+		}
+        XCTAssert(counter == 0, "Incorrect number of options (is \(counter), should be 0")
+
+		counter = 0
+		for _ in testSetA {
+			counter += 1
+		}
+        XCTAssert(counter == 1, "Incorrect number of options (is \(counter), should be 1")
+
+        counter = 0
+		for _ in testSetAB {
+			counter += 1
+		}
+        XCTAssert(counter == 2, "Incorrect number of options (is \(counter), should be 2")
+
+        counter = 0
+		for _ in testSetABD {
+			counter += 1
+		}
+        XCTAssert(counter == 3, "Incorrect number of options (is \(counter), should be 3")
+
+        counter = 0
+		for _ in testSetAll {
+			counter += 1
+		}
+        XCTAssert(counter == 4, "Incorrect number of options (is \(counter), should be 4")
+
+        counter = 0
+		for _ in testSetDuplicate {
+			counter += 1
+		}
+        XCTAssert(counter == 1, "Incorrect number of options (is \(counter), should be 1")
+
+		var iterator = testSetAll.makeIterator()
+		var s = ""
+		while let n = iterator.next() {
+			s += "\(n.rawValue)"
+		}
+		XCTAssert(s == "1248", "Incorrect order of elements out of iterator (is \(s) should be \"1248\")")
+
+		iterator = testSetABD.makeIterator()
+		s = ""
+		while let n = iterator.next() {
+			s += "\(n.rawValue)"
+		}
+		XCTAssert(s == "128", "Incorrect order of elements out of iterator (is \(s) should be \"128\")")
+	}
+
+    func testIteratorUIControlEvents() {
         var counter = 0
         for _ in UIControl.Event.allEvents {
             counter += 1
@@ -45,4 +114,5 @@ class OptionSetIteratorTests: XCTestCase {
         }
         XCTAssert(counter == 3, "Incorrect number of handled events (is \(counter), should be 3")
     }
+
 }

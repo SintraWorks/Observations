@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Note that we only accept unsigned integers, because the `next()` function may not produce correct results on signed integers or other types.
+/// This limits us to traditional option sets that are usually built by defining the options through bit shifting.
 public struct OptionSetIterator<Element: OptionSet>: IteratorProtocol where Element.RawValue == UInt {
     private let value: Element
 
@@ -15,7 +17,7 @@ public struct OptionSetIterator<Element: OptionSet>: IteratorProtocol where Elem
     }
 
     private lazy var remainingBits = value.rawValue
-    private var bitMask: UInt = 1
+	private var bitMask: Element.RawValue = 1
 
     public mutating func next() -> Element? {
         while remainingBits != 0 {
@@ -27,4 +29,10 @@ public struct OptionSetIterator<Element: OptionSet>: IteratorProtocol where Elem
         }
         return nil
     }
+}
+
+extension OptionSet where Self.RawValue == UInt {
+   public func makeIterator() -> OptionSetIterator<Self> {
+      return OptionSetIterator(element: self)
+   }
 }
