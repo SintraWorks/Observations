@@ -77,7 +77,7 @@ extension MultiObservable {
 
 	/// Send something observable to all observers.
 	/// - Parameter observation: An Observation.
-	func notifyObservers(of observation: Observation) {
+	func notifyObservers(_ observation: Observation) {
 		for observer in observers {
 			observer.observe(observation)
 		}

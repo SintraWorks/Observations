@@ -25,16 +25,16 @@
 
 import UIKit
 
-class ObservableViewController: UIViewController, Observable {
-	enum Action {
-		case button1Tapped
-		case button2Tapped(message: String)
-		case sliderDragged(value: Float)
-		case isTrackingSlider(flag: Bool)
-	}
+class ObservableViewController2: UIViewController {
+	typealias Button1TapListener = () -> Void
+	typealias Button2TapListener = (String) -> Void
+	typealias SliderDragListener = (Float) -> Void
+	typealias SliderTrackingListener = (Bool) -> Void
 
-    typealias Observation = Action
-	var observer: Observer<Observation>?
+	var button1TappedListener: Button1TapListener?
+	var button2TappedListener: Button2TapListener?
+	var sliderDragListener: SliderDragListener?
+	var sliderTrackingListener: SliderTrackingListener?
 
 	let button1 = ObservableButton(type: .custom)
 	let button2 = ObservableButton(type: .custom)
@@ -52,22 +52,22 @@ class ObservableViewController: UIViewController, Observable {
 	func button1Pressed() {
         numberOfActions += 1
         self.label.text = "Action \(numberOfActions) on button 1"
-		observer?.observe(.button1Tapped)
+		button1TappedListener?()
 	}
 
 	func button2Pressed(message: String) {
         numberOfActions += 1
 
         self.label.text = "Action \(numberOfActions) on button 2"
-		observer?.observe(.button2Tapped(message: message))
+		button2TappedListener?(message)
 	}
 
 	func sliderDragged(newValue: Float) {
-		observer?.observe(.sliderDragged(value: newValue))
+		sliderDragListener?(newValue)
 	}
 
 	func trackingUpdate(isTracking: Bool) {
-		observer?.observe(.isTrackingSlider(flag: isTracking))
+		sliderTrackingListener?(isTracking)
 	}
 
 	private func setupButtons() {

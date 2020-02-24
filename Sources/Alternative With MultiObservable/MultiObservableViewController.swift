@@ -25,7 +25,7 @@
 
 import UIKit
 
-class ObservableViewController: UIViewController, Observable {
+class MultiObservableViewController: UIViewController, MultiObservable {
 	enum Action {
 		case button1Tapped
 		case button2Tapped(message: String)
@@ -34,7 +34,7 @@ class ObservableViewController: UIViewController, Observable {
 	}
 
     typealias Observation = Action
-	var observer: Observer<Observation>?
+	var observers: [Observer<MultiObservableViewController.Action>] = []
 
 	let button1 = ObservableButton(type: .custom)
 	let button2 = ObservableButton(type: .custom)
@@ -52,22 +52,24 @@ class ObservableViewController: UIViewController, Observable {
 	func button1Pressed() {
         numberOfActions += 1
         self.label.text = "Action \(numberOfActions) on button 1"
-		observer?.observe(.button1Tapped)
+
+		notifyObservers(.button1Tapped)
 	}
 
 	func button2Pressed(message: String) {
         numberOfActions += 1
 
         self.label.text = "Action \(numberOfActions) on button 2"
-		observer?.observe(.button2Tapped(message: message))
+		
+		notifyObservers(.button2Tapped(message: message))
 	}
 
 	func sliderDragged(newValue: Float) {
-		observer?.observe(.sliderDragged(value: newValue))
+		notifyObservers(.sliderDragged(value: newValue))
 	}
 
 	func trackingUpdate(isTracking: Bool) {
-		observer?.observe(.isTrackingSlider(flag: isTracking))
+		notifyObservers(.isTrackingSlider(flag: isTracking))
 	}
 
 	private func setupButtons() {

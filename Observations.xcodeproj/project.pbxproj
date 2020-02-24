@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D25765524026FED00CA6FEB /* ObservableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25765424026FED00CA6FEB /* ObservableViewController2.swift */; };
+		6D257657240272E100CA6FEB /* ObservingViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D257656240272E100CA6FEB /* ObservingViewController2.swift */; };
+		6D25765A24027F7500CA6FEB /* MultiObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D25765924027F7500CA6FEB /* MultiObservableViewController.swift */; };
 		6D3B39CD228B59DC00846BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */; };
 		6D3B39CF228B59DC00846BC2 /* ObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */; };
 		6D3B39D2228B59DC00846BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B39D0228B59DC00846BC2 /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D25765424026FED00CA6FEB /* ObservableViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableViewController2.swift; sourceTree = "<group>"; };
+		6D257656240272E100CA6FEB /* ObservingViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservingViewController2.swift; sourceTree = "<group>"; };
+		6D25765924027F7500CA6FEB /* MultiObservableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiObservableViewController.swift; sourceTree = "<group>"; };
 		6D3B39C9228B59DC00846BC2 /* Observations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Observations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +102,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D25765324026F3F00CA6FEB /* AppInfrastructureStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */,
+				6D3B39D0228B59DC00846BC2 /* Main.storyboard */,
+				6D3B39D3228B59E800846BC2 /* Assets.xcassets */,
+				6D3B39D5228B59E800846BC2 /* LaunchScreen.storyboard */,
+				6D3B39D8228B59E800846BC2 /* Info.plist */,
+			);
+			path = AppInfrastructureStuff;
+			sourceTree = "<group>";
+		};
+		6D25765824027EF200CA6FEB /* Alternative Without Observing */ = {
+			isa = PBXGroup;
+			children = (
+				6D25765424026FED00CA6FEB /* ObservableViewController2.swift */,
+				6D257656240272E100CA6FEB /* ObservingViewController2.swift */,
+			);
+			path = "Alternative Without Observing";
+			sourceTree = "<group>";
+		};
+		6D25765B240281F600CA6FEB /* Alternative With MultiObservable */ = {
+			isa = PBXGroup;
+			children = (
+				6D25765924027F7500CA6FEB /* MultiObservableViewController.swift */,
+			);
+			path = "Alternative With MultiObservable";
+			sourceTree = "<group>";
+		};
 		6D3B39C0228B59DC00846BC2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,14 +154,12 @@
 		6D3B39CB228B59DC00846BC2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6D25765324026F3F00CA6FEB /* AppInfrastructureStuff */,
 				6D3B39FA228B5A1A00846BC2 /* Observing */,
-				6D3B39CC228B59DC00846BC2 /* AppDelegate.swift */,
 				6D3B39CE228B59DC00846BC2 /* ObservableViewController.swift */,
 				6D3B3A01228CE71400846BC2 /* ObservingViewController.swift */,
-				6D3B39D0228B59DC00846BC2 /* Main.storyboard */,
-				6D3B39D3228B59E800846BC2 /* Assets.xcassets */,
-				6D3B39D5228B59E800846BC2 /* LaunchScreen.storyboard */,
-				6D3B39D8228B59E800846BC2 /* Info.plist */,
+				6D25765B240281F600CA6FEB /* Alternative With MultiObservable */,
+				6D25765824027EF200CA6FEB /* Alternative Without Observing */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -313,7 +346,10 @@
 				6D3B3A02228CE71400846BC2 /* ObservingViewController.swift in Sources */,
 				6DC6441B22A3966F00E27114 /* OptionSetIterator.swift in Sources */,
 				6D3B39FE228B5A6000846BC2 /* ObservableButton.swift in Sources */,
+				6D25765524026FED00CA6FEB /* ObservableViewController2.swift in Sources */,
+				6D25765A24027F7500CA6FEB /* MultiObservableViewController.swift in Sources */,
 				6D3B39CD228B59DC00846BC2 /* AppDelegate.swift in Sources */,
+				6D257657240272E100CA6FEB /* ObservingViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/AppInfrastructureStuff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689JQUEJ8U;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/AppInfrastructureStuff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
