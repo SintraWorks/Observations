@@ -25,7 +25,7 @@
 
 import UIKit
 
-class ObservingViewController2: UITableViewController {
+class NonObservingViewController: UITableViewController {
 
     var tableViewNeedsSyncing = false
 
@@ -49,7 +49,7 @@ class ObservingViewController2: UITableViewController {
 
 // MARK: - Navigation bar
 
-extension ObservingViewController2 {
+extension NonObservingViewController {
     @IBAction func showActions() {
         guard let vc = setupObservableViewController() else { return }
         self.navigationController?.pushViewController(vc, animated: true)
@@ -64,7 +64,7 @@ extension ObservingViewController2 {
     }
 
     private func setupObservableViewController() -> UIViewController? {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ObservableViewController") as? ObservableViewController2 else { return nil }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "NonObservableViewController") as? NonObservableViewController else { return nil }
 
 		vc.button1TappedListener = {
 			self.history.append("\(self.history.count + 1) Remote action on button 1")
@@ -88,7 +88,7 @@ extension ObservingViewController2 {
 
 // MARK: - TableView
 
-extension ObservingViewController2 {
+extension NonObservingViewController {
     private func reloadTableView() {
         tableView.reloadData()
         tableViewNeedsSyncing = false

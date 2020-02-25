@@ -25,7 +25,7 @@
 
 import UIKit
 
-class ObservableViewController2: UIViewController {
+class NonObservableViewController: UIViewController {
 	typealias Button1TapListener = () -> Void
 	typealias Button2TapListener = (String) -> Void
 	typealias SliderDragListener = (Float) -> Void

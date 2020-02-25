@@ -69,13 +69,13 @@ class ObservingTests: XCTestCase {
 
 		var calledCount = 0
 
-		var multiObservable = MultiObservableTester()
+		let multiObservable = MultiObservableTester()
 
 		let observer = multiObservable.addObserver { calledCount += 1 }
 
 		XCTAssertTrue(multiObservable.observers.count == 1, "multiObservable should have 1 observer (has: \(multiObservable.observers.count)")
 
-		multiObservable.notifyObservers(of: ())
+		multiObservable.notifyObservers(())
 		XCTAssertTrue(calledCount == 1, "handler called \(calledCount) times (should be 1)")
 
 		multiObservable.remove(observer: observer)
@@ -89,7 +89,7 @@ class ObservingTests: XCTestCase {
 		XCTAssertTrue(multiObservable.observers.count == 3, "multiObservable should have 3 observers (has: \(multiObservable.observers.count)")
 
 		calledCount = 0
-		multiObservable.notifyObservers(of: ())
+		multiObservable.notifyObservers(())
 		XCTAssertTrue(calledCount == 2, "handler called \(calledCount) times (should be 2)")
 
 		multiObservable.removeObservers()

@@ -27,8 +27,10 @@ class ObservationsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testABunch() {
+    func testObservableController() {
+
 		let app = XCUIApplication()
+		app.tables.staticTexts["Observable"].tap()
 		app.navigationBars["Show Actions"].buttons["Show Actions"].tap()
 		app.buttons["Action 1"].tap()
 		app.buttons["Action 2"].doubleTap()
@@ -53,5 +55,69 @@ class ObservationsUITests: XCTestCase {
 
         showActionsNavigationBar.buttons["Add"].tap()
         XCTAssertTrue(app.tables.cells.count == 1, "There should be 1 cell after tapping the plus button")
+		
     }
+
+    func testMultiObservableController() {
+
+		let app = XCUIApplication()
+		app.tables.staticTexts["MultiObservable"].tap()
+		app.navigationBars["Show Actions"].buttons["Show Actions"].tap()
+		app.buttons["Action 1"].tap()
+		app.buttons["Action 2"].doubleTap()
+		app.navigationBars["Observations.MultiObservableView"].buttons["Back"].tap()
+
+		XCTAssertTrue(app.tables.cells.count == 3, "Incorrect number of cells")
+		XCTAssertTrue(app.tables.cells.staticTexts["1 Remote action on button 1"].exists, "Incorrect row text")
+		XCTAssertTrue(app.tables.cells.staticTexts["2 touchUpInside button 2"].exists, "Incorrect row text")
+		XCTAssertTrue(app.tables.cells.staticTexts["3 touchUpInside button 2"].exists, "Incorrect row text")
+
+		app.navigationBars["Show Actions"].buttons["Show Actions"].tap()
+		app.sliders["0%"].swipeRight()
+
+		app.navigationBars["Observations.MultiObservableView"].buttons["Back"].tap()
+
+		XCTAssertTrue(app.tables.cells.count == 18, "Incorrect number of cells")
+		XCTAssertTrue(app.tables.cells.staticTexts["18 is tracking: false"].exists, "Incorrect row text")
+
+        let showActionsNavigationBar = app.navigationBars["Show Actions"]
+        showActionsNavigationBar.buttons["Delete"].tap()
+        XCTAssertTrue(app.tables.cells.count == 0, "There should be 0 cells after tapping the trash can")
+
+        showActionsNavigationBar.buttons["Add"].tap()
+        XCTAssertTrue(app.tables.cells.count == 1, "There should be 1 cell after tapping the plus button")
+
+    }
+
+    func testNonObservableController() {
+
+		let app = XCUIApplication()
+		app.tables.staticTexts["Non-Observable"].tap()
+		app.navigationBars["Show Actions"].buttons["Show Actions"].tap()
+		app.buttons["Action 1"].tap()
+		app.buttons["Action 2"].doubleTap()
+		app.navigationBars["Observations.NonObservableView"].buttons["Back"].tap()
+
+		XCTAssertTrue(app.tables.cells.count == 3, "Incorrect number of cells")
+		XCTAssertTrue(app.tables.cells.staticTexts["1 Remote action on button 1"].exists, "Incorrect row text")
+		XCTAssertTrue(app.tables.cells.staticTexts["2 touchUpInside button 2"].exists, "Incorrect row text")
+		XCTAssertTrue(app.tables.cells.staticTexts["3 touchUpInside button 2"].exists, "Incorrect row text")
+
+		app.navigationBars["Show Actions"].buttons["Show Actions"].tap()
+		app.sliders["0%"].swipeRight()
+
+		app.navigationBars["Observations.NonObservableView"].buttons["Back"].tap()
+
+		XCTAssertTrue(app.tables.cells.count == 18, "Incorrect number of cells")
+		XCTAssertTrue(app.tables.cells.staticTexts["18 is tracking: false"].exists, "Incorrect row text")
+
+        let showActionsNavigationBar = app.navigationBars["Show Actions"]
+        showActionsNavigationBar.buttons["Delete"].tap()
+        XCTAssertTrue(app.tables.cells.count == 0, "There should be 0 cells after tapping the trash can")
+
+        showActionsNavigationBar.buttons["Add"].tap()
+        XCTAssertTrue(app.tables.cells.count == 1, "There should be 1 cell after tapping the plus button")
+
+    }
+
 }

@@ -43,7 +43,7 @@ protocol Observable {
 }
 
 /// A protocol for observables that can service multiple `Observer`s.
-protocol MultiObservable {
+protocol MultiObservable: AnyObject {
 	associatedtype Observation
 	var observers: [Observer<Observation>] { get set }
 }
@@ -52,7 +52,7 @@ extension MultiObservable {
 	/// Add an observer by passing in a handler for the observation.
 	/// - Parameter handler: A function that takes an Observation.
 	/// - Returns: The newly created observer.
-	@discardableResult mutating func addObserver(for handler: @escaping (Observation) -> Void) -> Observer<Observation> {
+	@discardableResult func addObserver(for handler: @escaping (Observation) -> Void) -> Observer<Observation> {
 		let observer = Observer<Observation>(handler: handler)
 		observers.append(observer)
 		return observer
@@ -60,18 +60,18 @@ extension MultiObservable {
 
 	/// Add an observer.
 	/// - Parameter observer: An Observer.
-	mutating func add(observer: Observer<Observation>) {
+	func add(observer: Observer<Observation>) {
 		observers.append(observer)
 	}
 
 	/// Remove all instances of a specific observer.
 	/// - Parameter observer: An Observer.
-	mutating func remove(observer: Observer<Observation>) {
+	func remove(observer: Observer<Observation>) {
 		observers.removeAll { $0 === observer }
 	}
 
 	/// Remove all observers.
-	mutating func removeObservers() {
+	func removeObservers() {
 		observers.removeAll()
 	}
 
