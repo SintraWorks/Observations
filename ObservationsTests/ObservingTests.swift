@@ -29,7 +29,14 @@ import XCTest
 class ObservingTests: XCTestCase {
 
     func testObserverHandler() {
-        let testValue = 42
+        var callbackCalled = false
+        let voidObserver = Observer<Void> {
+            callbackCalled = true
+        }
+        voidObserver.observe(())
+        XCTAssertTrue(callbackCalled, "Callback for Void observer not called")
+
+		let testValue = 42
         let intObserver = Observer<Int> { int in
             XCTAssertEqual(int, testValue, "incorrect value")
         }
@@ -52,13 +59,6 @@ class ObservingTests: XCTestCase {
             XCTAssertNotNil(color, "should not be nil")
         }
         optionalObservable2.observe(testNonNilOptional)
-
-        var callbackCalled = false
-        let voidObserver = Observer<Void> {
-            callbackCalled = true
-        }
-        voidObserver.observe(())
-        XCTAssertTrue(callbackCalled, "Callback for Void observer not called")
     }
 
 	func testMultiObservable() {
